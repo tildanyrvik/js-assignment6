@@ -1,4 +1,5 @@
 while (running) {
+    let running = true;
         const choice = prompt(`
             Movie tracker
             1. Add Movie
@@ -9,17 +10,19 @@ while (running) {
     
 
     switch (choice) {
-        case "1":
+        case "1": {
             const title = prompt("Enter the title of the movie to add to library");
             addMovie(title);
             break;
+        }
         case "2":
             listMovies();
             break;
-        case "3":
+        case "3": {
             const title = prompt("Enter the title of the movie to mark as watched");
             markAsWatched(title);
             break;
+        }
         case "4":
             running = false;
             alert("Goodbye!");
@@ -59,11 +62,21 @@ function addMovie(title) {
         isWatched: false,
     });
 }
-
 addMovie(title);
 
 function listMovies() {
     library.forEach(movie => console.log(movie.title, movie.director, movie.isWatched));
 }
-
 listMovies();
+
+function markAsWatched(title) {
+    const movie = library.find(movie => movie.title === title)
+    if (movie) {
+        movie.isWatched = true;
+    } else {
+        alert("Movie not found");
+    }   
+}
+markAsWatched();
+
+
