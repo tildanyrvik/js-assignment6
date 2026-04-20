@@ -78,10 +78,8 @@ function movieTracker () {
             default:
                 alert("Invalid choice.");
             
-            addMovie(title);
-            listMovies();
-            markAsWatched();
         }    
     }
 }
 
+movieTracker();
