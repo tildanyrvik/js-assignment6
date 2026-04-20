@@ -1,37 +1,37 @@
-while (running) {
-    let running = true;
-        const choice = prompt(`
-            Movie tracker
-            1. Add Movie
-            2. List Movies
-            3. Mark Movie as Watched
-            4. Exit
-            Enter your choice:`);
-    
 
-    switch (choice) {
-        case "1": {
-            const title = prompt("Enter the title of the movie to add to library");
-            addMovie(title);
-            break;
-        }
-        case "2":
-            listMovies();
-            break;
-        case "3": {
-            const title = prompt("Enter the title of the movie to mark as watched");
-            markAsWatched(title);
-            break;
-        }
-        case "4":
-            running = false;
-            alert("Goodbye!");
-            break;
-        default:
-            alert("Invalid choice.");
-    }    
+function movieTracker () {
+    while (running) {
+            const choice = prompt(`
+                Movie tracker
+                1. Add Movie
+                2. List Movies
+                3. Mark Movie as Watched
+                4. Exit
+                Enter your choice:`);
+        
+
+        switch (choice) {
+            case "1": {
+                const title = prompt("Enter the title of the movie to add to library");
+                addMovie(title);
+                break;
+            }
+            case "2":
+                listMovies();
+                break;
+            case "3": {
+                const title = prompt("Enter the title of the movie to mark as watched");
+                markAsWatched(title);
+                break;
+            }
+            case "4":
+                alert("Goodbye!");
+                return;
+            default:
+                alert("Invalid choice.");
+        }    
+    }
 }
-
 const library = [
     {
         title: "Taxi Driver",
