@@ -1,3 +1,4 @@
+let running = true;
 
 function movieTracker () {
     while (running) {
@@ -25,8 +26,9 @@ function movieTracker () {
                 break;
             }
             case "4":
+                running = false;
                 alert("Goodbye!");
-                return;
+                break;
             default:
                 alert("Invalid choice.");
         }    
