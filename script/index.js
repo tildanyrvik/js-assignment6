@@ -28,12 +28,11 @@ function addMovie(title) {
         isWatched: false,
     });
 }
-addMovie(title);
 
 function listMovies() {
     library.forEach(movie => console.log(movie.title, movie.director, movie.isWatched));
 }
-listMovies();
+
 
 function markAsWatched(title) {
     const movie = library.find(movie => movie.title === title)
@@ -43,7 +42,7 @@ function markAsWatched(title) {
         alert("Movie not found");
     }   
 }
-markAsWatched();
+
 
 let running = true;
 
@@ -78,6 +77,10 @@ function movieTracker () {
                 break;
             default:
                 alert("Invalid choice.");
+            
+            addMovie(title);
+            listMovies();
+            markAsWatched();
         }    
     }
 }
